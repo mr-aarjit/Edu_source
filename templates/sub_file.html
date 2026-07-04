@@ -1,28 +1,32 @@
 {% load static %}
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<title>Files | Edu_Source</title>
-<link rel='stylesheet' href='{% static "/css/files.css" %}'>
-{% include "base.html" %}
-<div id="sections">
+<link rel="stylesheet" href="{% static 'css/files.css' %}">
 
+<title>Files | Edu_Source</title>
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="sections">
 
     {% for sez in sub_groups %}
     <section>
-        <a href="{{sez.file.url}}"  download style="text-decoration:none;"> <h2>{{sez.heading}}</h2> </a>
-        <p>{{sez.description}}</p>
+        <a href="{{ sez.file.url }}" target="_blank" download="{{ sez.file.name }}" style="text-decoration:none;">
+            <h2>{{ sez.heading }}</h2>
+        </a>
+
+        <p>{{ sez.description }}</p>
     </section>
     {% endfor %}
 
-
-
     <section id="new">
-    <a href="{% url "file_upload" groups.id %}">   <i class="fa-chisel fa-regular fa-plus"></i> </a>
-       
+        <a href="{% url 'file_upload' groups.id %}">
+            <i class="fa-regular fa-plus"></i>
+        </a>
     </section>
-   
-</div>
-    
-</body>
 
-</html>
+</div>
+
+{% endblock %}
