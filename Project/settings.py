@@ -147,16 +147,10 @@ LOGOUT_REDIRECT_URL = ""
 # At the bottom of settings.py, after all your settings
 
 # Ensure media directories exist
+# ========== MEDIA FILES FIX ==========
 import os
 
-# Create media root directory
+# Create media directories
+MEDIA_ROOT = BASE_DIR / "media"
 os.makedirs(MEDIA_ROOT, exist_ok=True)
-
-# Create the files subdirectory
-files_dir = os.path.join(MEDIA_ROOT, 'files')
-os.makedirs(files_dir, exist_ok=True)
-
-# Print debug info (this will show in Render logs)
-print(f"MEDIA_ROOT: {MEDIA_ROOT}")
-print(f"Files directory exists: {os.path.exists(files_dir)}")
-print(f"Files directory is writable: {os.access(files_dir, os.W_OK)}")
+os.makedirs(os.path.join(MEDIA_ROOT, 'files'), exist_ok=True)
