@@ -11,7 +11,7 @@
 
 <section>
     {% if sez.file %}
-        <a href="{{ sez.file.url }}" target="_blank" download>
+        <a href="{% url 'download_file' sez.id %}" target="_blank" rel="noopener noreferrer" download>
             <h2>{{ sez.heading }}</h2>
         </a>
     {% else %}

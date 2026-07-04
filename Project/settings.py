@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-)6gpoln&166twi2fio7%g)gb10v*ye^d7c7fmggtep$uo2&*oh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 SECRET_KEY = os.environ.get("SECRET_KEY")
-ALLOWED_HOSTS = [".onrender.com"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".onrender.com"]
 
 # Application definition
 
@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'Project.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get("DATABASE_URL"),
+        default=os.environ.get("DATABASE_URL", "sqlite:///db.sqlite3"),
         conn_max_age=600
     )
 }

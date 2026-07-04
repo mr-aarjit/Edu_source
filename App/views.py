@@ -1,8 +1,13 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from .models import index_file, Group, Sub_group
-from django.contrib.auth.models import User
-from django.contrib.auth import login, authenticate, logout
+import mimetypes
+import os
+
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.http import FileResponse, Http404, JsonResponse
+from django.shortcuts import get_object_or_404, redirect, render
+
+from .models import Group, Sub_group, index_file
 
 def index(request):
 
@@ -29,6 +34,25 @@ def sub_files(request, id):
     return render(request, 'sub_file.html', {"groups":group, "sub_groups": sub_group})
 
 
+def download_file(request, id):
+    sub_group = get_object_or_404(Sub_group, id=id)
+
+    if not sub_group.file:
+        raise Http404("No file uploaded")
+
+    file_name = sub_group.file.name
+    storage = sub_group.file.storage
+
+    if not storage.exists(file_name):
+        raise Http404("File not found")
+
+    file_obj = storage.open(file_name, 'rb')
+    content_type, _ = mimetypes.guess_type(file_name)
+    response = FileResponse(file_obj, content_type=content_type or 'application/octet-stream')
+    response['Content-Disposition'] = f'attachment; filename="{os.path.basename(file_name)}"'
+    return response
+
+
 @login_required
 def dashboard(request):
 
@@ -49,9 +73,8 @@ def dashboard(request):
 
     })
 
-from django.http import JsonResponse
 from django.conf import settings
-import os
+
 
 def check_media(request):
     """Check where files are actually saving"""
