@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class Group(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    heading = models.CharField()
+    heading = models.CharField(max_length=70)
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -16,7 +16,7 @@ class Group(models.Model):
 
 class index_file(models.Model):
 
-    heading = models.CharField()
+    heading = models.CharField(max_length=70)
     image = models.ImageField(upload_to='images/', null=True, blank=False)
 
 
@@ -26,7 +26,7 @@ class index_file(models.Model):
 
 class Sub_group(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    heading = models.CharField()
+    heading = models.CharField(max_length=70)
     description = models.TextField()
     group = models.ForeignKey(Group, on_delete=models.CASCADE)
     file = models.FileField(upload_to="files/", null=True, blank=True)
