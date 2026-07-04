@@ -227,85 +227,87 @@ strong{
 }
 
 @media (max-width: 768px) {
-    nav {
-        margin-bottom: 30px;
-        margin: 5px;
-        border-radius: 15px;
+
+    nav{
+        margin:10px;
+        margin-bottom:30px;
     }
 
-    #ul {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-        padding: 15px 10px;
+    #ul{
+        flex-direction:column;
+        gap:18px;
+        padding:20px;
     }
 
-    #logo {
-        font-size: 28px;
-        margin-right: 0;
-        text-align: center;
-        width: 100%;
+    #logo{
+        font-size:2rem;
+        margin:0;
+        text-align:center;
+        width:100%;
     }
 
-    .li {
-        font-size: 16px;
+    .li{
+        font-size:18px;
     }
 
-    .section {
-        flex-direction: column;
-        gap: 20px;
-        padding: 10px;
-        margin-bottom: 3rem;
-        margin-top: 20px;
+    .section{
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        gap:30px;
+        padding:20px;
+        margin:40px 0;
+        text-align:center;
     }
 
-    .section p {
-        font-size: 20px;
-        word-spacing: 3px;
-        margin-top: 0;
-        line-height: 1.4;
+    .section p{
+        font-size:1.4rem;
+        line-height:1.6;
+        margin:0;
+        word-spacing:3px;
+    }
+
+    .section img{
+        width:90%;
+        max-width:350px;
+        height:auto;
+        margin:0;
+        border-radius:25px;
     }
 
     .section_1 img,
-    .section_2 img {
-        width: 95%;
-        margin: 0 auto;
-        border-radius: 30px;
-        display: block;
+    .section_2 img{
+        margin:0;
     }
 
-    .section_1,
-    .section_2 {
-        margin-top: 20px;
+    .section img:hover{
+        transform:scale(1.05);
     }
 
-    .section_2 img {
-        margin-top: 0;
+    .section_coder{
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        padding:20px;
     }
 
-    .section img:hover {
-        transform: scale(1.05);
+    .section_coder i{
+        font-size:5rem;
+        margin:0;
     }
 
-    .section_coder i {
-        font-size: 5rem;
-        margin-left: 0;
+    #coder{
+        margin:15px 0 10px;
+        font-size:2rem;
     }
 
-    #coder {
-        font-size: 1.5rem;
-        margin-top: 0.5rem;
+    #descr{
+        margin:0;
+        font-size:1rem;
+        line-height:1.7;
+        padding:0 15px;
+        text-align:center;
     }
 
-    #descr {
-        font-size: 0.9rem;
-        padding: 0 10px;
-        line-height: 1.5;
-    }
-
-    .section_coder {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
 }
