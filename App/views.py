@@ -82,31 +82,42 @@ def login_view(request):
     return render(request, 'login.html')
 
 
-
 @login_required
 def file_upload(request, id):
-
     if request.method == "POST":
         heading = request.POST.get("heading")
         description = request.POST.get("descri")
         files_ = request.FILES.get('file')
         
-        
         group = get_object_or_404(Group, id=id)
-
+        
         if description == "":
             description = "None" 
-            
         
-        datas = Sub_group(user=request.user,  heading=heading, description=description, file=files_, group=group)
-        datas.save()
-
-        return redirect('files')
-
+        # Add error handling for file upload
+        if not files_:
+            return render(request, "file_upload.html", {
+                'error': 'Please select a file to upload'
+            })
         
-
+        try:
+            datas = Sub_group(
+                user=request.user, 
+                heading=heading, 
+                description=description, 
+                file=files_, 
+                group=group
+            )
+            datas.save()
+            return redirect('files')
+        except Exception as e:
+            # This will help debug the issue
+            print(f"Upload error: {e}")
+            return render(request, "file_upload.html", {
+                'error': f'Upload failed: {str(e)}'
+            })
+    
     return render(request, "file_upload.html")
-
 
 
 def signup(request):

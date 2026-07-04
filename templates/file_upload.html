@@ -4,7 +4,13 @@
 <link rel = 'stylesheet' href='{% static "css/file_upload.css" %}'>
 
 
-
+<body>
+    <!-- Add this right after the form tag -->
+{% if error %}
+    <div style="color: red; margin: 10px 0; padding: 10px; background: #fee; border-radius: 5px;">
+        {{ error }}
+    </div>
+{% endif %}
 
 
 <section id="login_form" >
@@ -28,6 +34,8 @@
     </form>
 
 </section>
+
+
 
 </body>
 
