@@ -13,6 +13,7 @@
     
     --section_text_color: black;
     --section_text_shadow: 1px 2px 3px black;
+    --strong: lightsteelblue;
 }
 
 
@@ -31,7 +32,7 @@ body.dark-mode {
     
     --section_text_color: lightblue;
     --section_text_shadow: 1px 2px 3px black, 2px 3px 4px white, 2px 3px 4px coral;
-    ;;
+    --strong: rgb(82, 12, 157);
 
     
         }   
@@ -179,7 +180,7 @@ nav {
 }
 
 strong{
-    color: rgb(82, 12, 157);
+    color: var(--strong);
 
 }
 
