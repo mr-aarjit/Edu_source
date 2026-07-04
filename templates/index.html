@@ -4,6 +4,16 @@
 <title>Home | Edu_Source</title>
 {% include "base.html" %}
 <main>
+
+
+<div class="section section_coder">
+        <i class="fa-solid fa-circle-user" style="   border: solid transparent 1px;"></i>
+        <span id="coder"><pre><v style="font-size:3.5rem">Mr.</v><strong style="font-size:2rem"><x style="font-size:5rem; font-family: cursive">A</x>arjit</strong></pre></span>
+        <br><br><br>
+        <span id="descr">""Edu_Source is a platform created  to share the <br> knowledge  and the resources I got. You can use this for <br>free but you need to be ethical""</span>
+
+</div>
+
 {% for data in datas  %}
 <div class="section {% cycle 'section_1' ' section_2' %}">
     <img src="{{data.image.url}}" width="310px">
