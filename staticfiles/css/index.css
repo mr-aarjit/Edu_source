@@ -164,6 +164,42 @@ nav {
     border-radius: 80px 50px;
 }
 
+.section_coder{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    color: var(--logo);
+}
+
+
+.section_coder i {
+    font-size: 10rem;
+    margin-left: 30rem;
+    border-radius: 50px;
+}
+
+strong{
+    color: rgb(82, 12, 157);
+
+}
+
+#coder {
+    margin-left: 30px;
+    font-size: 2.5rem;
+    margin-top: -1rem;
+    font-family: "Cinzel";
+}
+
+
+#descr {
+    margin-top: 1rem;
+    margin-left: 45rem;
+    margin-top: -5rem;
+    font-size: 1rem;
+    font-family: 'Caudex';
+}
+
+
 .section p {
     font-size: 40px;
     margin-top: -10px;
@@ -189,71 +225,86 @@ nav {
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
+    nav {
+        margin-bottom: 30px;
+        margin: 5px;
+        border-radius: 15px;
+    }
 
     #ul {
-        gap: 40px;
-        padding: 15px 20px;
-        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        padding: 15px 10px;
     }
 
     #logo {
-        font-size: 40px;
+        font-size: 28px;
+        margin-right: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .li {
+        font-size: 16px;
     }
 
     .section {
         flex-direction: column;
-        text-align: center;
-        gap: 30px;
+        gap: 20px;
+        padding: 10px;
+        margin-bottom: 3rem;
+        margin-top: 20px;
     }
 
     .section p {
-        font-size: 30px;
-        margin-left: 0;
+        font-size: 20px;
+        word-spacing: 3px;
+        margin-top: 0;
+        line-height: 1.4;
     }
 
     .section_1 img,
     .section_2 img {
-        margin-left: 0;
-        width: 70%;
-        height: auto;
+        width: 95%;
+        margin: 0 auto;
+        border-radius: 30px;
+        display: block;
+    }
+
+    .section_1,
+    .section_2 {
+        margin-top: 20px;
+    }
+
+    .section_2 img {
+        margin-top: 0;
     }
 
     .section img:hover {
-        transform: scale(1.1);
-    }
-}
-
-/* =========================
-   MOBILE (≤ 768px)
-========================= */
-@media (max-width: 768px) {
-
-    nav {
-        margin-bottom: 50px;
+        transform: scale(1.05);
     }
 
-    #ul {
+    .section_coder i {
+        font-size: 5rem;
+        margin-left: 0;
+    }
+
+    #coder {
+        font-size: 1.5rem;
+        margin-top: 0.5rem;
+    }
+
+    #descr {
+        font-size: 0.9rem;
+        padding: 0 10px;
+        line-height: 1.5;
+    }
+
+    .section_coder {
         flex-direction: column;
-        gap: 20px;
-        align-items: flex-start;
-    }
-
-    #logo {
-        font-size: 32px;
-    }
-
-    .li {
-        font-size: 18px;
-    }
-
-    .section p {
-        font-size: 24px;
-        word-spacing: 5px;
-    }
-
-    .section img {
-        width: 90%;
-        border-radius: 30px;
+        align-items: center;
+        text-align: center;
     }
 }

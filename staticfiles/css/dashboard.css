@@ -256,49 +256,30 @@ nav {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
-
 @media (max-width: 768px) {
-
     nav {
-        margin: 10px;
+        margin-bottom: 30px;
+        margin: 5px;
         border-radius: 15px;
-        overflow: hidden;
     }
 
     #ul {
-        display: flex;
-        flex-wrap: nowrap;          /* keep in one line */
-        overflow-x: auto;           /* allow scroll if needed */
-        -webkit-overflow-scrolling: touch;
-
-        gap: 12px;
-        padding: 10px;
+        flex-direction: column;
+        gap: 15px;
         align-items: center;
-        justify-content: flex-start;
-        white-space: nowrap;
-    }
-
-    /* hide scrollbar (optional but clean) */
-    #ul::-webkit-scrollbar {
-        display: none;
+        padding: 15px 10px;
     }
 
     #logo {
-        font-size: 1.5rem;
-        margin-right: 10px;
-        flex-shrink: 0;
+        font-size: 28px;
+        margin-right: 0;
+        text-align: center;
+        width: 100%;
     }
 
     .li {
-        font-size: 0.85rem;
-        flex-shrink: 0;          /* prevents shrinking */
-        white-space: nowrap;
-    }
-
-    .li a {
-        white-space: nowrap;
-    }
-}
+        font-size: 16px;
+    }}
 
 @media (max-width: 480px) {
 
