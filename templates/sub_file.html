@@ -12,7 +12,7 @@
 <section>
     {% if sez.file %}
         <a style='text-decoration:none' href="{% url 'download_file' sez.id %}" target="_blank" rel="noopener noreferrer" download>
-            <h2 style="text-decoration:none;">{{ sez.heading }}</h2>
+            <h2 >{{ sez.heading }}</h2>
         </a>
     {% else %}
         <h2>{{ sez.heading }} (No file uploaded)</h2>

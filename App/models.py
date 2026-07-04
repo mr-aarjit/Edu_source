@@ -31,3 +31,9 @@ class Sub_group(models.Model):
     group = models.ForeignKey(Group, on_delete=models.CASCADE)
     file = models.FileField(upload_to="files/", null=True, blank=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
+
+
+    def __str__(self):
+
+        return self.heading
+        
