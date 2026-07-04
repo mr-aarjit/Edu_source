@@ -62,7 +62,7 @@ body.dark-mode {
             #ffffff
         ) border-box;
     --pg_color: whitesmoke;
-    --new_btn: #090a1b ;
+    --new_btn: #fcfcfc ;
     --new_btn_hover : lightsteelblue;
 
     
@@ -148,6 +148,7 @@ nav {
     word-wrap: break-word;
     overflow-inline: auto;
     padding:20px;
+    justify-content: center;
     
     
 }
@@ -164,11 +165,14 @@ section {
     border-radius: 30px;
     animation: rgb_animation 10s ease-in-out   infinite;
     transition: transform ease 0.2s;
+    max-width: 90%;
+    
 } 
 
 
 section:hover{
-    transform: scale(1.092);
+    transform: scale(1.01);
+    
 }
 
 section h2{
@@ -198,7 +202,7 @@ section i{
 
 section i:hover{
     color: var(--new_btn_hover);
-    transform: scale(1.10);
+    transform: scale(1);
     cursor: pointer;
 }
 

@@ -10,11 +10,48 @@
             #00ff85,
             #ffea00
         ) border-box;
+    --pg_color: black;
+    --new_btn :#989cb6 ;
+    --new_btn_hover :#001c34;
+
+    
     
     --section_text_color: black;
     --section_text_shadow: 1px 2px 3px black;
-    --section_bg:  linear-gradient(white, white) padding-box,
-        linear-gradient(220deg,
+    --border_color : coral;
+    --section_bg: linear-gradient(white, white) padding-box,
+        linear-gradient(170deg,
+           #030303,
+            #edebf0,
+            #000000,
+            #ffffff,
+            #000000,
+            #edebf0,
+            #000000,
+            #ffffff
+        ) border-box;
+        
+}
+
+
+body.dark-mode {
+    --bg-main: #000;
+    --ul: whitesmoke;
+    --logo: white;
+    --bg-nav: linear-gradient(black, black) padding-box,
+            linear-gradient(270deg,
+                #ff004c,
+                #7a00ff,
+                #00d4ff,
+                #08eaff,
+                #ffea00
+            ) border-box;;
+    
+    --section_text_color: white;
+    --section_text_shadow: 1px 2px 3px black, 2px 3px 4px white, 2px 3px 4px coral;
+    --border_color: white;
+    --section_bg:  linear-gradient(black, black) padding-box,
+        linear-gradient(170deg,
             #000000,
             #edebf0,
             #000000,
@@ -24,41 +61,9 @@
             #000000,
             #ffffff
         ) border-box;
-        --form_a: black;
-}
-
-
-body.dark-mode {
-    --bg-main: #000;
-    --ul: whitesmoke;
-    --logo: white;
-    --bg-nav: linear-gradient(black, black) padding-box,
-            linear-gradient(195deg,
-                #ff004c,
-                #7a00ff,
-                #00d4ff,
-                #00ff85,
-                #ffea00
-            ) border-box;;
-    
-    --section_text_color: rgb(87, 88, 89);
-    --section_text_shadow: 1px 2px 3px black, 2px 3px 4px white, 2px 3px 4px coral;
-    --section_bg:  linear-gradient(black, black) padding-box,
-        linear-gradient(270deg,
-            #000000 0%,
-        #000000 30%,
-
-        #4a4a4a 40%,
-        #edebf0 45%,
-        #ffffff 50%,
-        #edebf0 55%,
-        #4a4a4a 60%,
-
-        #000000 70%,
-        #000000 100%
-        ) border-box;
-        --form_a: white;
-        
+    --pg_color: whitesmoke;
+    --new_btn: #1e215a ;
+    --new_btn_hover : lightsteelblue;
 
     
         }   
@@ -82,7 +87,6 @@ body {
 nav {
     border-bottom: 3px solid transparent;
     border-radius: 20px;
-
     background: var(--bg-nav);
         
 
@@ -132,112 +136,89 @@ nav {
 }
 
 
-#login_form {
-    width: min(90vw, 420px);
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: -1%;
 
-    padding: 2rem;
+
+
+
+#sections{
     display: grid;
-    gap: 50px;
-    padding-bottom: 6.5rem;
-    border: 1px solid transparent;
-    border-radius: 16px;
+    gap: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    overflow-inline: auto;
+    padding:20px;
+    justify-content: center;
+    
+    
+}
+
+section {
+    padding: 10px;
+    border: 4px solid transparent;
+    width: 100%;
+    display: block;
+    height: 200px;
     background: var(--section_bg);
-    box-shadow: 0 10px 30px rgba(0,0,0,.1);
-    animation: rgb_animation 15s infinite ;
-    background-size: 400% 400%;
-    transition: transform 0.3s ease ;
+    background-size: 400% 500%;
+    border-bottom: solid 1px transparent;
+    border-radius: 30px;
+    animation: rgb_animation 10s ease-in-out   infinite;
+    transition: transform ease 0.2s;
+    max-width: 96%;
+    
+} 
 
+
+section:hover{
+    transform: scale(1.01);
+    
+}
+
+section h2{
+    text-align:center;
+    color: var(--section_text_color);
+    margin-bottom: 20px;
+    font-size: 2rem;
+    border-bottom: 2px solid coral;
+    font-family: 'Great Vibes' }
+
+section p{
+    color:var(--pg_color);
+    margin-left: 25px;
+    font-family: 'Kode mono' ;
+    font-size: 11px;
 }
 
 
-#login_form:has(input:focus){
-    border: 1px solid lightslategray;
-    background-image: none;
-    transform: scale(1.02);
-}
-
-#login_form:hover{
-    transform: scale(1.05);
-}
-
-
-h1 {
+section i{
+    color: var(--new_btn);
+    font-size: 6rem;
+    justify-self: center;
     text-align: center;
-    font-size: clamp(2rem, 4vw, 3rem);
-    margin-bottom: clamp(2rem, 4vw, 3rem);
-    color: var(--logo);
-    font-family: 'Great Vibes';
+    margin-top: 2.2rem;
+    transition: transform 0.6s ease;
 }
 
-
-form a{
-    color: var(--form_a);
-    text-decoration: none;
-    font-size: 0.7rem;
-    margin-left: 7rem;
-    font-family: 'Caudex';
-    
-}
-
-input {
-    width: 100%;
-    padding: 0.9rem 1rem;
-    font-size: clamp(0.5rem, 1vw, 0.7rem);
-    margin-bottom: 2px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    outline: none;
-}
-
-button {
-    width: 100%;
-    padding: 0.9rem;
-    font-size: clamp(1rem, 2vw, 1.1rem);
-    margin-top: 20px;
-    
-    border: none;
-    border-radius: 10px;
+section i:hover{
+    color: var(--new_btn_hover);
+    transform: scale(1);
     cursor: pointer;
 }
 
-
-input {
-    background: rgb(231, 231, 231);
-    font-family: 'Caudex';
+#new{
+    display: flex;
+    justify-content: center;
 }
-
 
 @keyframes rgb_animation {
     0% {
         background-position: 0% 50%;
     }
     50% {
-        background-position: 100% 50%    }
+        background-position: 100% 50%;
+    }
     100% {
         background-position: 0% 50%;
-    }}
-
-@media (max-width: 768px) {
-    #ul {
-        gap: 10px;
-        padding: 15px;
-    }
-
-    #logo {
-        font-size: 20px;
-        width: 100%;
-        text-align: center;
-        margin-right: 0;
-        margin-left: -50px;
-    }
-
-    .li {
-        font-size: 10px;
     }
 }
-
-
-

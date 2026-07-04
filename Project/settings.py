@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 import dj_database_url
 from pathlib import Path
 import os
+import cloudinary
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -38,8 +39,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'App',
+    'cloudinary',
+    'cloudinary_storage'
     
 ]
+cloudinary.config( 
+    cloud_name = "ypqnxlbm", 
+    api_key = "496857664774852", 
+    api_secret = "QKShpqIyTJtPHlXsEhb4rttWkVo", # Click 'View API Keys' above to copy your API secret
+    secure=True
+)
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -131,9 +142,6 @@ if not DEBUG:
     # and renames the files with unique names for each version to support long-term caching
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-MEDIA_URL = '/media/'
-
-MEDIA_ROOT = BASE_DIR / "media"
 
 
 LOGIN_URL = "/login/"
@@ -144,22 +152,3 @@ LOGOUT_REDIRECT_URL = ""
 
 
 
-# At the bottom of settings.py, after all your settings
-
-# Ensure media directories exist
-# ========== MEDIA FILES FIX ==========
-import os
-
-# FORCE media directory to a specific path
-MEDIA_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'media')
-MEDIA_URL = '/media/'
-
-# CREATE directories with full permissions
-try:
-    os.makedirs(MEDIA_ROOT, exist_ok=True)
-    os.makedirs(os.path.join(MEDIA_ROOT, 'files'), exist_ok=True)
-    os.chmod(MEDIA_ROOT, 0o777)
-    os.chmod(os.path.join(MEDIA_ROOT, 'files'), 0o777)
-    print(f"✅ MEDIA_ROOT: {MEDIA_ROOT}")
-except Exception as e:
-    print(f"❌ Error creating media dirs: {e}")
