@@ -13,7 +13,8 @@ urlpatterns = [
     path('upload_file/<int:id>', views.file_upload, name='file_upload'),
     path('logout/', views.logout_view, name='logout'),
     path('sub_files/<int:id>', views.sub_files, name='sub_files'),
-    path('create_group/', views.create_group, name="create_group")
+    path('create_group/', views.create_group, name="create_group"),
+    path('check-media/', views.check_media, name='check_media'),
 
 ]
 

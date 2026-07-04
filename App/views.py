@@ -49,7 +49,29 @@ def dashboard(request):
 
     })
 
+from django.http import JsonResponse
+from django.conf import settings
+import os
 
+def check_media(request):
+    """Check where files are actually saving"""
+    media_root = str(settings.MEDIA_ROOT)
+    files_dir = os.path.join(media_root, 'files')
+    
+    # List files in the directory
+    files_list = []
+    if os.path.exists(files_dir):
+        files_list = os.listdir(files_dir)
+    
+    data = {
+        'media_root': media_root,
+        'media_exists': os.path.exists(media_root),
+        'files_dir': files_dir,
+        'files_exists': os.path.exists(files_dir),
+        'files_in_directory': files_list,
+    }
+    
+    return JsonResponse(data)
 
 def login_view(request):
 
@@ -96,7 +118,11 @@ def file_upload(request, id):
         if not files_:
             return render(request, "file_upload.html", {'error': 'Please select a file'})
         
-        # SAVE THE FILE
+        # DEBUG: Print where file will be saved
+        print(f"📁 File name: {files_.name}")
+        print(f"📁 File size: {files_.size}")
+        print(f"📁 MEDIA_ROOT: {settings.MEDIA_ROOT}")
+        
         datas = Sub_group(
             user=request.user, 
             heading=heading, 
@@ -105,6 +131,13 @@ def file_upload(request, id):
             group=group
         )
         datas.save()
+        
+        # DEBUG: Check if file was actually saved
+        if datas.file:
+            print(f"✅ File saved at: {datas.file.path}")
+            print(f"✅ File exists: {os.path.exists(datas.file.path)}")
+        else:
+            print("❌ File was NOT saved!")
         
         return redirect('files')
     

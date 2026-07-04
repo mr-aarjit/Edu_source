@@ -150,7 +150,16 @@ LOGOUT_REDIRECT_URL = ""
 # ========== MEDIA FILES FIX ==========
 import os
 
-# Create media directories
-MEDIA_ROOT = BASE_DIR / "media"
-os.makedirs(MEDIA_ROOT, exist_ok=True)
-os.makedirs(os.path.join(MEDIA_ROOT, 'files'), exist_ok=True)
+# FORCE media directory to a specific path
+MEDIA_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'media')
+MEDIA_URL = '/media/'
+
+# CREATE directories with full permissions
+try:
+    os.makedirs(MEDIA_ROOT, exist_ok=True)
+    os.makedirs(os.path.join(MEDIA_ROOT, 'files'), exist_ok=True)
+    os.chmod(MEDIA_ROOT, 0o777)
+    os.chmod(os.path.join(MEDIA_ROOT, 'files'), 0o777)
+    print(f"✅ MEDIA_ROOT: {MEDIA_ROOT}")
+except Exception as e:
+    print(f"❌ Error creating media dirs: {e}")
