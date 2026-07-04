@@ -1,0 +1,220 @@
+:root {
+    --bg-main: whitesmoke;
+    --ul: black;
+    --logo: rgba(0, 0, 0, 0.905);
+    --bg-nav: linear-gradient(white, white) padding-box,
+        linear-gradient(270deg,
+            #ff004c,
+            #7a00ff,
+            #00d4ff,
+            #00ff85,
+            #ffea00
+        ) border-box;
+    --pg_color: black;
+    --new_btn :#989cb6 ;
+    --new_btn_hover :#001c34;
+
+    
+    
+    --section_text_color: black;
+    --section_text_shadow: 1px 2px 3px black;
+    --border_color : coral;
+    --section_bg: linear-gradient(white, white) padding-box,
+        linear-gradient(170deg,
+           #030303,
+            #edebf0,
+            #000000,
+            #ffffff,
+            #000000,
+            #edebf0,
+            #000000,
+            #ffffff
+        ) border-box;
+        
+}
+
+
+body.dark-mode {
+    --bg-main: #000;
+    --ul: whitesmoke;
+    --logo: white;
+    --bg-nav: linear-gradient(black, black) padding-box,
+            linear-gradient(270deg,
+                #ff004c,
+                #7a00ff,
+                #00d4ff,
+                #08eaff,
+                #ffea00
+            ) border-box;;
+    
+    --section_text_color: white;
+    --section_text_shadow: 1px 2px 3px black, 2px 3px 4px white, 2px 3px 4px coral;
+    --border_color: white;
+    --section_bg:  linear-gradient(black, black) padding-box,
+        linear-gradient(170deg,
+            #000000,
+            #edebf0,
+            #000000,
+            #ffffff,
+            #000000,
+            #edebf0,
+            #000000,
+            #ffffff
+        ) border-box;
+    --pg_color: whitesmoke;
+    --new_btn: #090a1b ;
+    --new_btn_hover : lightsteelblue;
+
+    
+        }   
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: var(--bg-main);
+    font-family: Arial, sans-serif;
+    overflow: auto;
+}
+
+
+nav {
+    border-bottom: 3px solid transparent;
+    border-radius: 20px;
+    background: var(--bg-nav);
+        
+
+    background-size: 400% 400%;
+    animation: rgb_animation 6s ease infinite;
+
+    margin: 10px;
+    margin-bottom: 100px;
+}
+
+
+#ul {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    padding: 20px 30px;
+    list-style: none;
+}
+
+
+.li a,
+#ul {
+    color: var(--ul);
+    text-decoration: none;
+}
+
+
+.li {
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.li:hover {
+    transform: scale(1.1);
+}
+
+
+#logo {
+    font-size: 55px;
+    font-weight: bold;
+    margin-right: auto;
+    color: var(--logo);
+    text-shadow: 1px 1px 0 #999, 2px 2px 0 #666, 3px 3px 0 #333;
+    font-family: 'New Rocker', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    cursor: pointer;
+}
+
+
+
+
+
+
+#sections{
+    display: grid;
+    gap: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    overflow-inline: auto;
+    padding:20px;
+    
+    
+}
+
+section {
+    padding: 10px;
+    border: 4px solid transparent;
+    width: 100%;
+    display: block;
+    height: 200px;
+    background: var(--section_bg);
+    background-size: 400% 500%;
+    border-bottom: solid 1px transparent;
+    border-radius: 30px;
+    animation: rgb_animation 10s ease-in-out   infinite;
+    transition: transform ease 0.2s;
+} 
+
+
+section:hover{
+    transform: scale(1.092);
+}
+
+section h2{
+    text-align:center;
+    color: var(--section_text_color);
+    margin-bottom: 20px;
+    font-size: 2rem;
+    border-bottom: 2px solid coral;
+    font-family: 'Great Vibes' }
+
+section p{
+    color:var(--pg_color);
+    margin-left: 25px;
+    font-family: 'Kode mono' ;
+    font-size: 11px;
+}
+
+
+section i{
+    color: var(--new_btn);
+    font-size: 6rem;
+    justify-self: center;
+    text-align: center;
+    margin-top: 2.2rem;
+    transition: transform 0.6s ease;
+}
+
+section i:hover{
+    color: var(--new_btn_hover);
+    transform: scale(1.10);
+    cursor: pointer;
+}
+
+#new{
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes rgb_animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

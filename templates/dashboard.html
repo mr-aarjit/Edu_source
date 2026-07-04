@@ -1,0 +1,45 @@
+{% load static %}
+
+<link rel='stylesheet' href="{% static "css/dashboard.css" %}">
+{% include "base.html" %}
+<section class="hero">
+<title>Dashboard | Edu_Source</title>
+  <span id= "profile_logo">
+    <section id="first_row">
+
+        <i class="fa-solid fa-circle-user"></i>
+        
+        <section id="details">
+            <span>Username: {{username}}</span>
+            <span>Email: {{email}}</span>
+            <span>Role: {{role}}</span>
+            <span id="logout">
+                <a href="{% url "logout" %}" style="padding: 5px; width: 100px;">Log Out</a>
+            </span>
+        </section>
+        
+    </section>
+
+    <h1><span id="greet"> Hello, </span> <span id="highlighting_name">{{name}}</span></h1>
+  </span>
+
+  
+ <section id="files_added">
+
+    {% for  file in files  %}
+    <section class="files">
+        <h2>{{file.heading}}</h2>
+        <p>{{file.description}}</p>
+    </section>
+
+    {% endfor %}
+   
+
+</section>
+
+
+    
+
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+:root {
+    --bg-main: whitesmoke;
+    --ul: black;
+    --logo: rgba(0, 0, 0, 0.905);
+    --bg-nav: linear-gradient(white, white) padding-box,
+        linear-gradient(270deg,
+            #ff004c,
+            #7a00ff,
+            #00d4ff,
+            #00ff85,
+            #ffea00
+        ) border-box;
+    
+    --section_text_color: black;
+    --section_text_shadow: 1px 2px 3px black;
+}
+
+
+body.dark-mode {
+    --bg-main: #000;
+    --ul: whitesmoke;
+    --logo: white;
+    --bg-nav: linear-gradient(black, black) padding-box,
+            linear-gradient(270deg,
+                #ff004c,
+                #7a00ff,
+                #00d4ff,
+                #00ff85,
+                #ffea00
+            ) border-box;;
+    
+    --section_text_color: lightblue;
+    --section_text_shadow: 1px 2px 3px black, 2px 3px 4px white, 2px 3px 4px coral;
+    ;;
+
+    
+        }   
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: var(--bg-main);
+    font-family: Arial, sans-serif;
+    overflow: auto;
+}
+
+
+nav {
+    border-bottom: 3px solid transparent;
+    border-radius: 20px;
+
+    background: var(--bg-nav);
+        
+
+    background-size: 400% 400%;
+    animation: rgb_animation 6s ease infinite;
+
+    margin: 10px;
+    margin-bottom: 100px;
+}
+
+
+#ul {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    padding: 20px 30px;
+    list-style: none;
+}
+
+
+.li a,
+#ul {
+    color: var(--ul);
+    text-decoration: none;
+}
+
+
+.li {
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.li:hover {
+    transform: scale(1.1);
+}
+
+
+#logo {
+    font-size: 55px;
+    font-weight: bold;
+    margin-right: auto;
+    color: var(--logo);
+    text-shadow: 1px 1px 0 #999, 2px 2px 0 #666, 3px 3px 0 #333;
+    font-family: 'New Rocker', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    cursor: pointer;
+}
+
+
+#login_form {
+    width: min(90vw, 420px);
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -1%;
+
+    padding: 2rem;
+    display: grid;
+    gap: 50px;
+    padding-bottom: 6.5rem;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    background: var(--section_bg);
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    animation: rgb_animation 51s infinite ;
+    background-size: 400% 400%;
+    transition: transform 0.3s ease ;
+
+}
+
+
+#login_form:has(input:focus){
+    border: 1px solid lightslategray;
+    background-image: none;
+    transform: scale(1.02);
+}
+
+#login_form:hover{
+    transform: scale(1.05);
+}
+
+
+h1 {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    color: var(--logo);
+    font-family: 'Great Vibes';
+}
+
+
+form a{
+    color: var(--form_a);
+    text-decoration: none;
+    font-size: 0.7rem;
+    margin-left: 7rem;
+    font-family: 'Caudex';
+    
+}
+
+input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: clamp(0.5rem, 1vw, 0.7rem);
+    margin-bottom: 2px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    margin-top: 20px;
+    
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+input {
+    background: rgb(231, 231, 231);
+    font-family: 'Caudex';
+}
+
+
+@keyframes rgb_animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }}
+
+@media (max-width: 768px) {
+    #ul {
+        gap: 10px;
+        padding: 15px;
+    }
+
+    #logo {
+        font-size: 20px;
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+        margin-left: -50px;
+    }
+
+    .li {
+        font-size: 10px;
+    }
+}
+
+
+

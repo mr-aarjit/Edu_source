@@ -1,0 +1,26 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static "/css/index.css" %}">
+<title>Home | Edu_Source</title>
+{% include "base.html" %}
+<main>
+{% for data in datas  %}
+<div class="section {% cycle 'section_1' ' section_2' %}">
+    <img src="{{data.image.url}}" width="310px">
+    
+        <p>
+                {{data.heading}}
+        </p>
+    
+
+</div>
+</main>
+
+{% endfor %}
+
+
+
+
+
+</body>
+</html>

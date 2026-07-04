@@ -1,0 +1,33 @@
+{% include "base.html" %}
+{% load static %}
+<title> Create a group | Edu_Source</title>
+<link rel = 'stylesheet' href='{% static "css/group_upload.css" %}'>
+
+
+
+
+
+<section id="login_form" >
+
+    <form method="POST" enctype= "multipart/form-data">
+        {% csrf_token %}
+        <h1 id="header">Create a Group</h1>
+        <div id="credential">
+            <input type="text" placeholder="Heading" name="heading" required>
+            <br>
+            <input type="text" placeholder="Description" name="descri" > 
+            <br>
+        </div>
+        <input type="submit" value="Enter">
+
+
+
+
+    </form>
+
+</section>
+
+</body>
+
+
+</html>

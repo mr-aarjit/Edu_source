@@ -1,0 +1,47 @@
+{% include "base.html" %}
+<title> Signup | Edu_Source </title>
+{% load static %}
+<link rel='stylesheet' href="{% static "css/signup.css" %}">
+
+
+<section id="login_form">
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h1 id="header">Sign Up</h1>
+        <div id="credential">
+            <input type="text" placeholder="Full Name" name= "name">
+            <input type="text" placeholder="Username" name="username">
+            <input type="email" placeholder="email" name="email">
+            <br>
+            <input id="new_password" type="password" placeholder="New Password" name="password" >
+            <input id="new_confroim_password" type="password" placeholder="Confroim Password" name='confro_pass'>
+            <br> 
+        </div>
+        <br>
+
+         <a id="has_acc" href="login.html">Has account?</a>
+         <br><br>
+
+        <input id="btn" type="submit" value="Enter">
+
+
+       
+
+
+    </form>
+
+</section>
+
+
+{% if error %}
+<script> 
+    
+    alert("{{error}}")    
+    
+</script>
+{% endif %}
+
+</body>
+
+</html>

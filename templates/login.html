@@ -1,0 +1,43 @@
+{% load static %}
+
+
+
+<link rel="stylesheet" href="{% static "/css/login.css" %}">
+<body>
+
+<title> Login | Edu_Source </title>
+
+{% include "base.html" %}
+
+
+
+<section id="login_form">
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h1 id="header">Log-in</h1>
+        <div id="credential">
+            <input type="text" placeholder="Username" name="username">
+            <br>
+            <input id="password" type="password" placeholder="Password" name="password">
+            <br> <br>
+        </div>
+
+        <a href="{% url "signup" %}">Doesn't have any account?</a>
+        <br><br>
+        <input type="submit" value="Enter">
+
+
+    </form>
+
+</section>
+
+{% if error %}
+<script>
+
+    alert("{{error}}");
+</script>
+{% endif %}
+</body>
+
+</html>
