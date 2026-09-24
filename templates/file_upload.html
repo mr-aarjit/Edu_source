@@ -1,0 +1,43 @@
+{% include "base.html" %}
+{% load static %}
+<title> Upload the File | Edu_Source</title>
+<link rel = 'stylesheet' href='{% static "css/file_upload.css" %}'>
+
+
+<body>
+    <!-- Add this right after the form tag -->
+{% if error %}
+    <div style="color: red; margin: 10px 0; padding: 10px; background: #fee; border-radius: 5px;">
+        {{ error }}
+    </div>
+{% endif %}
+
+
+<section id="login_form" >
+
+    <form method="POST" enctype= "multipart/form-data">
+        {% csrf_token %}
+        <h1 id="header">Upload a file</h1>
+        <div id="credential">
+            <input type="text" placeholder="Heading" name="heading" required>
+            <br>
+            <input type="text" placeholder="Description" name="descri" > 
+            <br>
+            <input id="file" type="file" placeholder="File" name="file" required>
+            <br> <br>
+        </div>
+        <input type="submit" value="Enter">
+
+
+
+
+    </form>
+
+</section>
+
+
+
+</body>
+
+
+</html>

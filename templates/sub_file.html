@@ -1,0 +1,36 @@
+{% load static %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Files | Edu_Source</title>
+<link rel='stylesheet' href='{% static "/css/files.css" %}'>
+{% include "base.html" %}
+<div id="sections">
+
+
+  {% for sez in sub_groups %}
+
+<section>
+    {% if sez.file %}
+        <a style='text-decoration:none' href="{% url 'download_file' sez.id %}" target="_blank" rel="noopener noreferrer" download>
+            <h2 >{{ sez.heading }}</h2>
+        </a>
+    {% else %}
+        <h2>{{ sez.heading }} (No file uploaded)</h2>
+    {% endif %}
+
+    <p>{{ sez.description }}</p>
+</section>
+
+{% endfor %}
+
+
+    <section id="new">
+    <a href="{% url "file_upload" groups.id %}">   <i class="fa-chisel fa-regular fa-plus"></i> </a>
+       
+    </section>
+   
+</div>
+    
+</body>
+
+</html>

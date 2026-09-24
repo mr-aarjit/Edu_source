@@ -1,0 +1,94 @@
+:root {
+    --bg-main: whitesmoke;
+    --ul: black;
+    --logo: rgba(0, 0, 0, 0.905);
+
+    --bg-nav: linear-gradient(white, white) padding-box,
+        linear-gradient(270deg,
+            #ff004c,
+            #7a00ff,
+            #00d4ff,
+            #00ff85,
+            #ffea00
+        ) border-box;
+
+   
+
+
+
+    
+}
+
+/* DARK MODE */
+body.dark-mode {
+    --bg-main: #000;
+    --ul: whitesmoke;
+    --logo: white;
+
+    --bg-nav: linear-gradient(black, black) padding-box,
+        linear-gradient(270deg,
+            #ff004c,
+            #7a00ff,
+            #00d4ff,
+            #00ff85,
+            #ffea00
+        ) border-box;
+
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-main);
+    font-family: Arial, sans-serif;
+}
+
+/* NAV */
+nav {
+    border-bottom: 3px solid transparent;
+    border-radius: 20px;
+    background: var(--bg-nav);
+    background-size: 400% 400%;
+    animation: rgb_animation 6s ease infinite;
+    margin: 10px;
+    margin-bottom: 100px;
+}
+
+#ul {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    padding: 20px 30px;
+    list-style: none;
+}
+
+.li a,
+#ul {
+    color: var(--ul);
+    text-decoration: none;
+}
+
+.li {
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.li:hover {
+    transform: scale(1.1);
+}
+
+#logo {
+    font-size: 55px;
+    font-weight: bold;
+    margin-right: auto;
+    color: var(--logo);
+    text-shadow: 1px 1px 0 #999, 2px 2px 0 #666, 3px 3px 0 #333;
+    font-family: 'New Rocker', system-ui;
+    cursor: pointer;
+}

@@ -1,0 +1,27 @@
+{% load static %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Files | Edu_Source</title>
+<link rel='stylesheet' href='{% static "/css/files.css" %}'>
+{% include "base.html" %}
+<div id="sections">
+
+    {% for data in datas  %}
+    <section>
+        <a href="{% url "sub_files" data.id %}" style="text-decoration:none;"> <h2>{{data.heading}}</h2> </a>
+        <p>{{data.description}}</p>
+    </section>
+    {% endfor %}
+
+
+
+    <section id="new">
+    <a href="{% url "create_group" %}">   <i class="fa-chisel fa-regular fa-plus"></i> </a>
+       
+    </section>
+   
+</div>
+    
+</body>
+
+</html>
