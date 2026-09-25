@@ -6,6 +6,16 @@ Edu Source is a platform I made for sharing files and ideas. You can upload your
 
 
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
 
 
 **HOW TO INSTALL AND RUN IT**
@@ -18,7 +28,7 @@ Edu Source is a platform I made for sharing files and ideas. You can upload your
 
 5. Run migration
    ```bash
-       #python manage.py migrate
+     python manage.py migrate
 
 7. Simply run the server:
     ```bash
