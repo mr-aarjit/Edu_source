@@ -13,13 +13,16 @@ Edu Source is a platform I made for sharing files and ideas. You can upload your
 1. For downloading you can simply download it in the zip file or clone the repo.
 2. Consider downloading python in your system to run it
 3. Download Django through pip:
-        #pip install django
+   ```bash
+     pip install django
 
-4. Run migration
+5. Run migration
+   ```bash
        #python manage.py migrate
 
-5. Simply run the server:
-    #python manage.py runserver
+7. Simply run the server:
+    ```bash
+    python manage.py runserver
 
 
 **NOTE: _If you encounter any bug or error, just text me at aarjitbaral2067@gmail.com_** 
