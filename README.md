@@ -18,7 +18,7 @@
 
 
 
-**HOW TO INSTALL AND RUN IT**
+**HOW TO INSTALL AND RUN IT?**
 
 1. For downloading you can simply download it in the zip file or clone the repo.
 2. Consider downloading python in your system to run it
