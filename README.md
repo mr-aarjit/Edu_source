@@ -1,6 +1,6 @@
 **WHAT IS EDU SOURCE?**
 
-Edu Source is a platform I made for sharing files and ideas. You can upload your own file and ideas making it easier to find you. You may share your notes, your suppliance, etc. You could find the notes that you need to have while travelling from zero to expert. 
+   **Edu Source** is a platform I made for sharing files and ideas. You can upload your own file and ideas making it easier to find you. You may share your notes, your              suppliance, etc. You could find the notes that you need to have while travelling from zero to expert. 
 
 
 
